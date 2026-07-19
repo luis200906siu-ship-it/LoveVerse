@@ -1,0 +1,100 @@
+body{
+
+    margin:0;
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle,#301934,#080014);
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+.contenedor{
+
+    width:90%;
+    max-width:900px;
+
+}
+
+
+h1{
+
+    font-size:45px;
+
+}
+
+
+.recuerdos{
+
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+
+}
+
+
+.recuerdo{
+
+    background:rgba(255,255,255,0.1);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    width:220px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+button{
+
+    margin-top:25px;
+
+    padding:16px 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff2d6f,#ff7eb3);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 0 20px rgba(255,45,111,.5);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.08);
+
+    box-shadow:0 0 35px rgba(255,45,111,.8);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}

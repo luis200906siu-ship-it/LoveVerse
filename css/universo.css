@@ -1,0 +1,223 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Poppins,sans-serif;
+
+    min-height:100vh;
+
+    background:linear-gradient(to bottom,#020111,#07162d,#000);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+h1{
+
+    font-size:55px;
+
+    margin-bottom:10px;
+
+}
+
+p{
+
+    margin-bottom:25px;
+
+    font-size:20px;
+
+}
+
+.progreso{
+
+    width:350px;
+
+    height:18px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-bottom:10px;
+
+}
+
+#barra{
+
+    width:16%;
+
+    height:100%;
+
+    background:#ff4d88;
+
+    transition:.6s;
+
+}
+
+#porcentaje{
+
+    margin-bottom:40px;
+
+    font-size:18px;
+
+}
+
+.universo{
+
+    position:relative;
+
+    width:900px;
+
+    height:520px;
+
+}
+
+/* PLANETAS */
+
+.planeta{
+
+    position:absolute;
+
+    width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    user-select:none;
+
+}
+
+.planeta:hover{
+
+    transform:scale(1.15);
+
+}
+
+/* PLANETA DISPONIBLE */
+
+.carta{
+
+    background:#ff4d88;
+
+    box-shadow:0 0 35px #ff4d88;
+
+}
+
+/* PLANETAS BLOQUEADOS */
+
+.bloqueado{
+
+    background:#555;
+
+    box-shadow:0 0 15px #444;
+
+    cursor:not-allowed;
+
+}
+
+/* POSICIONES */
+
+#p1{
+
+    left:70px;
+
+    top:60px;
+
+}
+
+#p2{
+
+    right:90px;
+
+    top:70px;
+
+}
+
+#p3{
+
+    left:230px;
+
+    bottom:40px;
+
+}
+
+#p4{
+
+    right:210px;
+
+    bottom:45px;
+
+}
+
+#p5{
+
+    left:420px;
+
+    top:120px;
+
+}
+
+#p6{
+
+    left:520px;
+
+    bottom:100px;
+
+}
+
+/* Animación de entrada */
+
+body{
+
+    animation: aparecer 1.2s ease;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.03);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}

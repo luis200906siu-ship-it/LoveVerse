@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una pregunta para ti ❤️</title>
+
+<link rel="stylesheet" href="css/propuesta.css">
+
+</head>
+
+
+<body>
+
+
+<div class="contenedor">
+
+
+<div class="sobre">
+
+💌
+
+</div>
+
+
+<div class="mensaje">
+
+<h1>
+Tengo algo especial para ti ❤️
+</h1>
+
+
+<p>
+Hay algo que llevo guardando en mi corazón
+y quiero compartirlo contigo.
+</p>
+
+
+<button onclick="mostrarPregunta()" class="boton">
+
+Abrir mi pregunta ❤️
+
+</button>
+
+
+<div id="pregunta" style="display:none;">
+
+
+<p>
+Gracias por cada momento, por cada sonrisa y por
+dejarme conocer una persona tan especial como tú.
+</p>
+
+
+<p>
+No quiero prometerte una vida perfecta,
+quiero prometerte que siempre voy a intentar dar
+lo mejor de mí.
+</p>
+
+
+<h2>
+Quiero seguir creando recuerdos contigo 🌹
+</h2>
+
+
+<h1 class="pregunta">
+
+¿Quieres ser mi novia? ❤️
+
+</h1>
+
+
+<p class="final">
+
+Tómate tu tiempo, lo importante es que tu respuesta
+salga de tu corazón. ❤️
+
+</p>
+
+<p class="firma">
+
+Con mucho cariño, Luis ❤️
+
+</p>
+
+<div class="respuesta">
+
+<h2>
+Quiero saber qué sientes ❤️
+</h2>
+
+
+<textarea id="respuesta" placeholder="Escribe aquí tu respuesta..."></textarea>
+
+
+<button onclick="enviarRespuesta()" class="boton">
+Enviar respuesta 💌
+</button>
+
+
+<p id="resultado"></p>
+
+
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+<script>
+
+function mostrarPregunta(){
+
+document.getElementById("pregunta").style.display="block";
+
+crearCorazones();
+
+}
+
+
+function crearCorazones(){
+
+for(let i = 0; i < 80; i++){
+
+let corazon = document.createElement("div");
+
+corazon.innerHTML="❤️";
+
+corazon.className="corazon";
+
+corazon.style.left=Math.random()*100+"vw";
+
+corazon.style.animationDuration=(3+Math.random()*3)+"s";
+
+
+document.body.appendChild(corazon);
+
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},6000);
+
+
+}
+
+}
+
+async function enviarRespuesta(){
+
+let texto = document.getElementById("respuesta").value;
+
+if(texto.trim()==""){
+
+document.getElementById("resultado").innerHTML=
+"Escribe primero tu respuesta ❤️";
+
+return;
+
+}
+
+await fetch("/respuesta",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+mensaje:texto
+
+})
+
+});
+
+crearCorazones();
+
+document.querySelector(".respuesta").innerHTML=`
+
+<h1>❤️ Gracias ❤️</h1>
+
+<p style="font-size:22px;line-height:1.8;">
+
+Gracias por abrir tu corazón.
+
+Tu respuesta quedó guardada para siempre en nuestro pequeño universo. 🌹
+
+</p>
+
+<p style="margin-top:20px;">
+
+Sin importar cuál haya sido tu respuesta,
+
+gracias por llegar hasta aquí.
+
+Este momento siempre será muy especial para mí. ❤️
+
+</p>
+
+<button class="boton" onclick="window.location.href='index.html'">
+
+Cerrar nuestra historia ❤️
+
+</button>
+
+`;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
